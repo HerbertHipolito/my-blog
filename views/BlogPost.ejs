@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%-blog.title%></title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<%-header%>
+
+<body>
+
+    <div id="blog-title">
+
+        <h1 id="title">
+            <%=blog.title%>
+        </h1>
+        <h2>subtitle here subtitle here subtitle here </h2>
+
+        <div id="author-data">
+            <p>
+               By <%=userName%>
+            </p>
+            <div>
+                <p>
+                    <%=data%>
+                </p>
+            </div>
+            <p>
+                <%=blog.tags%>
+            </p>
+            <p>
+                <img src= '<%=pathImageHtml%>' alt=""> 
+            </p>
+        </div>
+
+    </div>
+    <div id="blog-text-space">
+        
+        <div id="blog-text">
+            <%for(paragraph of paragraphs){%>
+                <p><%=paragraph%></p>
+            <%}%>
+        </div>
+
+    </div>
+
+</body>
+
+<footer>
+    <p> Developed by Herbert Hipólito - Access my github to more information</p>
+</footer>
+
+</html>

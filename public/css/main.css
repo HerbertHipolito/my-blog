@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* header */
+
+header,footer,#body-div{
+    /*background-color: rgb(23, 0, 28);*/
+    background-color: black;
+}
+
+header{
+    color: white;
+}
+
+#header-first-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5vh 0;
+    margin: 0 5vw;
+}
+
+#header-first-div p{
+    font-size: 150%;
+}
+
+#header-first-div ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 150%;
+    list-style: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#header-first-div ul a{
+    text-decoration: none;
+}
+
+
+#header-first-div ul li{
+    color: white;
+    padding: 1vh 0.8vw;
+    border-radius: 10px;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+}
+
+#header-first-div ul li:hover{
+    background-color: white;
+    color:black
+}
+
+#header-li-contact{
+    margin:0 1.2vw;
+}
+
+
+/* Body title*/
+
+#blog-title{
+    min-height: 30vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4vh 0;
+}
+
+#blog-title h1{
+
+    font-size: 250%;
+
+}
+
+#blog-title h2{
+    margin: 3vh auto;
+}
+
+#author-data{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+
+#author-data div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#author-data p{
+    font-size: 150%;
+}
+
+#author-data img{
+    border-radius: 20px;
+}
+
+/* Body text*/
+
+#blog-text-space{
+    border-top: black 1px solid;
+    width: 100%;
+}
+
+#blog-text{
+    margin: 13vh;
+    min-height: 50vh;
+}
+
+#blog-text p {
+    font-size: 120%;
+}
+
+/*body login */
+
+#first-body-div{
+    min-height:73vh;
+}
+
+#login-div form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10vh 32vw;
+    padding: 5vh 4vw;
+    border-radius: 10px;
+}
+
+#login-div form h1{
+    margin-top: 3vh;
+    margin-bottom: 6vh;
+}
+
+#login-div form input{
+    border-bottom: black 1px solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin: 1.2vh 0;
+    padding: 0.6vh;
+    font-size: 160%;
+}
+
+.login-button-class{
+    background: black;
+    color: white;
+    font-size: 140%;
+    padding: 1vh 2vh;
+    margin-top: 7vh;
+    margin-bottom: 3vh;
+    cursor:pointer;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+    text-decoration: none;
+    border: 1px solid black;
+    
+}
+
+.login-button-class:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+#login-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 5vw;
+}
+
+/*body register new post*/
+
+#text-input-blog{
+    border: black 1px solid;
+    margin: 1.2vh 0;
+    padding: 5vh 0.6vh;
+    font-size: 160%;
+}
+
+/* main page  */
+
+#body-div{
+    border-bottom: solid black 1px;
+    min-height:80vh;
+}
+
+#h1-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+#h1-title{
+    padding: 3vh 5vw;
+    margin: 8vh 0;
+    background-color: black;
+    color:white;
+    border-radius: 20px;
+}
+
+#posts-main-page{
+    background-color: #c5c5ca;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 7vh 5vw;
+    padding: 5vh 0;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+.content-div{
+    display: flex;
+    flex-direction: column;
+}
+.content-img{
+    height: 25vh;
+    width: 25vw;
+}
+
+.content-div button{
+    background-color: black;
+    border: black solid 1px;
+    color: white;
+    padding: 0.8vh;
+    font-size: 110%;
+    cursor: pointer;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+    width: 100%;
+}
+
+.content-div button:hover{
+    background-color: white;
+    color: black;
+    border: black solid 1px;
+}
+
+/*footer*/
+
+footer{
+    padding: 2vh;
+    text-align: center;
+    color: white;
+}
+
+footer p{
+    font-size: 120%;
+}
