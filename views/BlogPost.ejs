@@ -38,17 +38,61 @@
         </div>
 
     </div>
-    <div id="blog-text-space">
-        
-        <div id="blog-text">
-            <%for(paragraph of paragraphs){%>
-                <p><%=paragraph%></p>
-            <%}%>
-        </div>
+    <main>
+        <article>
+                
+            <div id="blog-text-space">
+                
+                <div id="blog-text">
+                    <%for(paragraph of paragraphs){%>
+                        <p><%=paragraph%></p><br>
+                    <%}%>
+                </div>
 
+            </div>
+
+        </article>
+    </main>
+
+    <div id="comments" >
+        <%if(blogComments.length>0){%>
+            <h1> Seção dos comentários </h1>
+            <%for(let i=0;i<blogComments.length;i++){%>
+
+                <div class="userComment-div">
+
+                    <div class="userComment-div-line1">
+                        <p class="userComment-p-author">Author: <%=blogComments[i].authorName%></p>
+                        <p class="userComment-p-date">Data: <%=newDates[i]%></p>
+                    </div>
+                    <p class="userComment-p-text"><%=blogComments[i].text%></p>
+
+                </div>
+
+            <%}%>
+
+        <%}else{%>
+            <p id="no-comment">No comments</p>
+        <%}%>
     </div>
 
+    <%if(logged){%>
+        <div id="div-on">
+            <form action="" method="post">
+                <p id="div-on-p">Any thoughts about the post?</p>
+                <textarea id = "comment-area" name = "commentText" required></textarea>
+                <button id="div-on-button">Send</button>
+            </form>
+        </div>
+    <%}else{%>
+        <div id="div-off">
+            <p><a href="../../login">Login</a> to comment</p>
+        </div>
+    <%}%>
+
 </body>
+
+
 
 <footer>
     <p> Developed by Herbert Hipólito - Access my github to more information</p>

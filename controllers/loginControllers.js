@@ -6,15 +6,11 @@ require('dotenv').config();
 
 const getLoginController = async (req, res) => {
 
-    const tag = await htmlTags.findOne({ tag: 'login' });
+    if (req.session.authenticated) return res.redirect('/');
 
-    let header = null
-    req.session.authenticated ? header = await htmlTags.findOne({tag:'headerLogged'}) : header = await htmlTags.findOne({tag:'header'});
+    const header = await htmlTags.findOne({tag:'header'});
 
-    if (!tag) return res.status(400).json({ 'message': 'error' });
-
-    return res.render(path.join('..', 'views', 'main'), {
-        body: tag.code,
+    return res.render(path.join('..', 'views', 'login'), {
         header:header.code
     });
 
@@ -22,25 +18,39 @@ const getLoginController = async (req, res) => {
 
 const postLoginController = async (req, res) => {
 
-    if (!req.body?.inputId || !req.body?.inputPassword) return res.status(400).json({ 'message': 'Input missing' });
+    try{
 
-    const { inputId, inputPassword } = req.body
+        if (!req.body?.inputId || !req.body?.inputPassword) throw Error('Input missing');
 
-    const user = await users.findOne({ login: req.body.inputId });
-    if (!user) return res.status(400).json({ 'message': 'Login or password not found' });
-    const match = await bcrypt.compare(req.body.inputPassword, user.password);
-    if (!match) return res.status(400).json({ 'message': 'Login or password not found' });
+        const { inputId, inputPassword } = req.body
 
-    req.session.authenticated = true;
+        const user = await users.findOne({ login: req.body.inputId });
+        if (!user) throw Error('Login or password not found');
+        const match = await bcrypt.compare(req.body.inputPassword, user.password);
+        if (!match) throw Error('Login or password not found');
 
-    req.session.user = {
-        "role": user.role,
-        "login": user.login,
-        "name":user.name,
-    };
+        req.session.authenticated = true;
 
-    return res.redirect('/');
+        req.session.user = {
+            "role": user.role,
+            "login": user.login,
+            "name":user.name,
+        };
 
+        return res.redirect('/');
+
+    }catch(MessageError){
+
+        const header = await htmlTags.findOne({tag:'header'});
+
+        return res.render(path.join('..','views','login'),{
+            header:header.code,
+            error:MessageError
+        })
+
+    }
+
+    
 }
 
 const logoutController = (req,res) =>{

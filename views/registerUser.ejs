@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<%-header%>
+
+<body>
+    
+    <div id="login-div">
+        <form action="" method="post">
+
+            <h1 id="login-div-h1">Welcome! </h1>
+            
+            <input type="text" placeholder = "Id" name = "inputId" required>
+            <input type="text" placeholder = "Name" name = "inputName" required>
+            <input type="password" placeholder= "Password" name = "inputPassword" required>
+            <input type="password" placeholder= "Repeat Password" name = "inputPassword2" required>
+            <input type="email" placeholder = "Email" name = "inputEmail" required>
+
+            <%if (typeof(error) != "undefined"){%>
+                <div>
+                    <%console.log('dasdasd')%>
+                   <p><%= error %> </p>  
+                </div>
+            <%}%>
+
+            <div id="login-button">
+                <button class="login-button-class">Enter</button>
+                <a href="./" class="login-button-class" >Back</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+<footer>
+    <p> Developed by Herbert Hipólito - Access my github to more information</p>
+</footer>
+
+</html>

@@ -7,7 +7,7 @@ const fs = require('fs');
 const getNewBlogController = async (req,res) =>{
     
     const body = await htmlTags.findOne({ tag: 'registerBlog' });
-    const header = await htmlTags.findOne({ tag:'headerLogged' }); 
+    const header = await htmlTags.findOne({ tag:'headerLoggedNewBlog' }); 
 
     if (!body || !header) return res.status(400).json({ 'message': 'error' });
 

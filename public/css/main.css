@@ -254,6 +254,100 @@ header{
     border: black solid 1px;
 }
 
+/*comment section*/
+
+#div-on form,#div-off{
+    border-top: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh 0;
+}
+
+#div-on-p{
+    font-size: 130%;
+}
+
+#comment-area{
+    width: 35vw;
+    height: 8vh;
+    font-size: 110%;
+    margin: 5vh 0;
+}
+
+#div-on-button{
+    background-color: black;
+    color: white;
+    padding: 1.3vh;
+    font-size: 110%;
+    cursor: pointer;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+}
+
+#div-on-button:hover{
+    background-color: white;
+    color: black;
+}
+
+#div-off p a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 1.1vh;
+    font-size: 110%;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+}
+
+#div-off p a:hover{
+    background-color: white;
+    color: black;
+}
+
+/*comment section*/
+
+#comments{
+    margin: 5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.userComment-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 3vh 15vw;
+    border: 1px solid black;
+}
+
+.userComment-div-line1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 1vh;
+    font-size: 110%;
+}
+#comments{
+    border-top: 1px solid black;
+    padding-top: 5vh;
+}
+#no-comment{
+    font-size: 110%;
+}
+
+.userComment-p-text{
+    font-size: 110%;
+    padding: 2.3vh;
+}
+
+
 /*footer*/
 
 footer{
